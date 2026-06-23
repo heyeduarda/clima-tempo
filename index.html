@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clima Tempo</title>
+    <meta name="description" content="Consulte o clima atual e a previsão dos próximos dias para qualquer cidade do mundo, gratuitamente e sem cadastro.">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9B%85%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/global/style.css">
+</head>
+<body>
+    <div class="bg-decor">
+        <span class="blob blob--1"></span>
+        <span class="blob blob--2"></span>
+        <span class="blob blob--3"></span>
+    </div>
+
+    <main class="page">
+        <header class="hero">
+            <span class="hero__badge">Previsão do tempo</span>
+            <h1 class="hero__title">Clima <span>Tempo</span></h1>
+            <p class="hero__subtitle">Consulte o clima atual e a previsão dos próximos dias para qualquer cidade do mundo</p>
+        </header>
+
+        <section class="search">
+            <div class="search__box">
+                <svg class="search__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/>
+                    <path d="M20 20L16.5 16.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <label for="cidade-input" class="sr-only">Nome da cidade</label>
+                <input type="text" id="cidade-input" placeholder="Digite o nome da cidade..." autocomplete="off">
+                <button id="btn-buscar" type="button">Buscar</button>
+            </div>
+            <button id="btn-localizacao" class="link-btn" type="button">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="16" height="16" aria-hidden="true">
+                    <path d="M12 21s-7-7.4-7-12a7 7 0 1 1 14 0c0 4.6-7 12-7 12Z" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="12" cy="9" r="2.5" stroke="currentColor" stroke-width="2"/>
+                </svg>
+                Usar minha localização
+            </button>
+        </section>
+
+        <div id="mensagem" class="mensagem" role="status" aria-live="polite"></div>
+
+        <section id="resultado" class="resultado hidden">
+            <div class="current-card">
+                <div class="current-card__top">
+                    <div>
+                        <h2 id="nome-cidade" class="current-card__city"></h2>
+                        <span id="atualizado-em" class="current-card__updated"></span>
+                    </div>
+                    <div class="current-card__icon" id="icone-atual"></div>
+                </div>
+
+                <div class="current-card__temp">
+                    <span id="temp-atual"></span>
+                </div>
+                <p id="desc-atual" class="current-card__desc"></p>
+
+                <div class="current-card__stats">
+                    <div class="stat">
+                        <span class="stat__icon">💨</span>
+                        <div>
+                            <strong><span id="vento-atual"></span> km/h</strong>
+                            <span class="stat__label">Vento</span>
+                        </div>
+                    </div>
+                    <div class="stat">
+                        <span class="stat__icon">💧</span>
+                        <div>
+                            <strong><span id="umidade-atual"></span>%</strong>
+                            <span class="stat__label">Umidade</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="section-title">Próximos dias</h3>
+            <div id="previsao" class="forecast-grid"></div>
+        </section>
+    </main>
+
+    <footer class="footer">Dados fornecidos por <a href="https://open-meteo.com" target="_blank" rel="noopener">Open-Meteo</a></footer>
+
+    <script src="assets/js/app.js"></script>
+</body>
+</html>
