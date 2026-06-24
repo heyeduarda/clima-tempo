@@ -26,14 +26,6 @@ Não há instalação nem build. Para usar localmente:
 1. Baixe ou clone este repositório.
 2. Abra o arquivo `index.html` diretamente no navegador (duplo clique).
 
-Alternativamente, sirva a pasta com qualquer servidor estático (opcional, útil para evitar peculiaridades de `file://` em alguns navegadores):
-
-```bash
-npx serve .
-# ou
-python -m http.server 8000
-```
-
 ## Estrutura
 
 ```
